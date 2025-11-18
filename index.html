@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Signup Form</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="https://img.favpng.com/10/21/7/computer-icons-form-website-development-favicon-png-favpng-sdZcUFRhufN8Bwv5KNAUTDbL0.jpg">
+    <style>
+        /* Custom font import and styling */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            --primary-color: #4f46e5; /* Indigo-600 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        /* Custom focus styles for inputs */
+        input:focus {
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5) !important;
+            outline: none;
+        }
+        /* Hide default radio/checkbox but use Tailwind utilities to style the custom look */
+        input[type="radio"]:checked + label::before,
+        input[type="checkbox"]:checked + label::before {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-6">
+
+    <!-- Main Container: Centered Card Layout -->
+    <div class="main-container w-full max-w-md bg-white shadow-xl rounded-2xl p-6 sm:p-10 border border-gray-100">
+
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h2 class="heading text-3xl font-extrabold text-gray-900">Create Your Account</h2>
+            <p class="text-gray-500 mt-2">Join our community today!</p>
+        </header>
+
+        <!-- Main Content (Form) -->
+        <main>
+            <form action="#" method="post" class="space-y-5">
+                <!-- Name Input -->
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                    <input type="text" id="name" placeholder="John Doe" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2" required>
+                </div>
+
+                <!-- Email Input -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="email" placeholder="you@example.com" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2" required>
+                </div>
+
+                <!-- Password Group -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Password -->
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input type="password" id="password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2" required>
+                    </div>
+                    <!-- Confirm Password -->
+                    <div>
+                        <label for="confirmpassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                        <input type="password" id="confirmpassword" placeholder="Confirm Password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2" required>
+                    </div>
+                </div>
+
+                <!-- Date-of-Birth Input -->
+                <div>
+                    <label for="dob" class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+                    <input type="date" id="dob" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2" required>
+                </div>
+
+                <!-- Gender Radio Buttons -->
+                <div class="pt-2">
+                    <span class="block text-sm font-medium text-gray-700 mb-2">Gender</span>
+                    <div class="flex space-x-6">
+                        <div class="flex items-center">
+                            <input type="radio" id="gender_m" name="gender" value="male" class="text-indigo-600 focus:ring-indigo-500 h-4 w-4 border-gray-300" required>
+                            <label for="gender_m" class="ml-2 text-sm text-gray-600">Male</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" id="gender_f" name="gender" value="female" class="text-indigo-600 focus:ring-indigo-500 h-4 w-4 border-gray-300">
+                            <label for="gender_f" class="ml-2 text-sm text-gray-600">Female</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms and Conditions Checkbox -->
+                <div class="flex items-start pt-3">
+                    <div class="flex items-center h-5">
+                        <input id="box" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" required>
+                    </div>
+                    <div class="ml-3 text-sm">
+                        <label for="box" class="font-medium text-gray-700">I agree to all terms and conditions</label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-3 mt-6 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-150 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50">
+                    Sign Up Now
+                </button>
+            </form>
+        </main>
+
+        <!-- Footer (Social Links) -->
+        <footer class="mt-8 text-center border-t border-gray-100 pt-6">
+            <div class="text-sm text-gray-500 mb-4">You can connect with us at</div>
+            <div class="flex justify-center space-x-6">
+                <!-- X / Twitter Icon -->
+                <a href="#" class="text-gray-400 hover:text-indigo-600 transition duration-150 ease-in-out" aria-label="X / Twitter">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.901 1.153h3.684l-8.042 9.178L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.153h7.525l4.905 6.37L18.901 1.153Zm-1.54 19.825H16.4l-5.045-5.07L4.74 3.1h2.89l5.045 5.07 6.67 13.008Z"/>
+                    </svg>
+                </a>
+                <!-- LinkedIn Icon -->
+                <a href="#" class="text-gray-400 hover:text-indigo-600 transition duration-150 ease-in-out" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4.01-3.235-4.01 0v5.604h-3v-11h3v1.765c1.396-2.586 7.01-2.428 7.01 4.706v4.529z"/>
+                    </svg>
+                </a>
+                <!-- Facebook Icon -->
+                <a href="#" class="text-gray-400 hover:text-indigo-600 transition duration-150 ease-in-out" aria-label="Facebook">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

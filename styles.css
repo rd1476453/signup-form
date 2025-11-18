@@ -1,0 +1,269 @@
+:root {
+    /* Define primary color variable */
+    --primary-color: #4f46e5; /* Indigo-600 */
+    --primary-hover-color: #4338ca; /* Indigo-700 */
+    --background-color: #f3f4f6; /* Light gray background */
+    --text-color-primary: #111827; /* Gray-900 */
+    --text-color-secondary: #6b7280; /* Gray-500 */
+    --text-color-light: #4b5563; /* Gray-600 */
+    --border-color: #d1d5db; /* Gray-300 */
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* p-4 */
+}
+
+/* Responsive Padding for Body */
+@media (min-width: 640px) {
+    body {
+        padding: 1.5rem; /* sm:p-6 */
+    }
+}
+
+/* Main Container (Card) */
+.main-container {
+    width: 100%;
+    max-width: 28rem; /* max-w-md */
+    background-color: #ffffff;
+    box-shadow: var(--shadow-xl); /* shadow-xl */
+    border-radius: 1rem; /* rounded-2xl */
+    padding: 1.5rem; /* p-6 */
+    border: 1px solid #f3f4f6; /* border border-gray-100 */
+}
+@media (min-width: 640px) {
+    .main-container {
+        padding: 2.5rem; /* sm:p-10 */
+    }
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 2rem; /* mb-8 */
+}
+
+.heading {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 800; /* font-extrabold */
+    color: var(--text-color-primary);
+}
+@media (min-width: 640px) {
+    .heading {
+        font-size: 2.25rem; /* sm:text-4xl if needed, but keeping original 3xl */
+    }
+}
+
+.subtitle {
+    color: var(--text-color-secondary);
+    margin-top: 0.5rem; /* mt-2 */
+}
+
+/* Form Styles */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* space-y-5 */
+}
+
+/* Label Styles */
+label {
+    display: block;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #374151; /* gray-700 */
+    margin-bottom: 0.25rem; /* mb-1 */
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 0.75rem; /* p-3 */
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: all 0.15s ease-in-out;
+}
+
+/* Input Focus Styles (Custom styling from original <style> block) */
+input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5) !important;
+    outline: none;
+}
+
+/* Password Group Layout */
+.password-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem; /* gap-4 */
+}
+@media (min-width: 640px) {
+    .password-group {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* sm:grid-cols-2 */
+    }
+}
+
+/* Gender Radio Buttons */
+.gender-group {
+    padding-top: 0.5rem; /* pt-2 */
+}
+.gender-label {
+    display: block;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #374151; /* gray-700 */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+.radio-options {
+    display: flex;
+    gap: 1.5rem; /* space-x-6 */
+}
+.radio-option {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling native radio/checkbox elements */
+input[type="radio"],
+input[type="checkbox"] {
+    /* Reset default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 1rem; /* h-4 */
+    width: 1rem; /* w-4 */
+    border: 1px solid var(--border-color); /* border-gray-300 */
+    border-radius: 50%; /* for radio */
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    flex-shrink: 0;
+}
+
+input[type="checkbox"] {
+    border-radius: 0.25rem; /* rounded */
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    /* Adding a custom checkmark/dot for better visibility */
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.207 4.793a1 1 0 00-1.414 0L7 8.586 4.207 5.793a1 1 0 00-1.414 1.414l3.5 3.5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"/></svg>');
+    background-size: 0.75rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+input[type="radio"]:checked {
+    /* Custom dot for radio */
+    background-image: none;
+    box-shadow: inset 0 0 0 4px white;
+}
+
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+    /* Focus ring for accessibility */
+    box-shadow: 0 0 0 2px white, 0 0 0 4px var(--primary-color);
+    outline: none;
+}
+
+.radio-option label {
+    margin-left: 0.5rem; /* ml-2 */
+    font-size: 0.875rem; /* text-sm */
+    color: var(--text-color-light); /* gray-600 */
+    font-weight: 400; /* regular weight */
+    cursor: pointer;
+}
+
+/* Terms and Conditions Checkbox */
+.terms-group {
+    display: flex;
+    align-items: flex-start; /* items-start */
+    padding-top: 0.75rem; /* pt-3 */
+}
+.checkbox-container {
+    height: 1.25rem; /* h-5 */
+    display: flex;
+    align-items: center;
+}
+.terms-label-container {
+    margin-left: 0.75rem; /* ml-3 */
+    font-size: 0.875rem; /* text-sm */
+}
+.terms-label {
+    font-weight: 500; /* font-medium */
+    color: #374151; /* gray-700 */
+    cursor: pointer;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding-top: 0.75rem; /* py-3 */
+    padding-bottom: 0.75rem; /* py-3 */
+    margin-top: 1.5rem; /* mt-6 */
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600; /* font-semibold */
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* transition duration-150 ease-in-out */
+    box-shadow: var(--shadow-md);
+    border: none;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover-color);
+    box-shadow: var(--shadow-lg); /* hover:shadow-lg */
+}
+
+.submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.5), 0 0 0 1px var(--primary-color); /* focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 */
+}
+
+/* Footer Styles (Social Links) */
+footer {
+    margin-top: 2rem; /* mt-8 */
+    text-align: center;
+    border-top: 1px solid #f3f4f6; /* border-t border-gray-100 */
+    padding-top: 1.5rem; /* pt-6 */
+}
+
+.social-text {
+    font-size: 0.875rem; /* text-sm */
+    color: var(--text-color-secondary); /* gray-500 */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* space-x-6 */
+}
+
+.social-icon {
+    color: #9ca3af; /* gray-400 */
+    transition: color 0.15s ease-in-out; /* transition duration-150 ease-in-out */
+}
+
+.social-icon:hover {
+    color: var(--primary-color); /* hover:text-indigo-600 */
+}
+
+.icon-svg {
+    width: 1.5rem; /* w-6 */
+    height: 1.5rem; /* h-6 */
+}
